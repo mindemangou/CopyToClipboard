@@ -1,14 +1,17 @@
 {
   "name": "copytoclipboard",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "devDependencies": {
+    "@types/node": "^22.13.9",
+    "happy-dom": "^17.2.2",
     "typescript": "~5.7.2",
     "vite": "^6.2.0",
     "vitest": "^3.0.7"

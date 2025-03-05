@@ -5,9 +5,44 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
+
+    <link rel="stylesheet" href="./src/index.css">
+
+    <script src="./src/copyToClipboard.js" type="module" defer ></script>
+
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+
+    <copyto-clipboard>
+
+      <button id="copyToClipboard" >copy to clipboard</button>
+
+      <button id="copied" >copied</button>
+    
+      <template> 
+    
+        #content {
+          display: flex;
+        }
+        
+        div > div {
+          border: 3px solid rgb(0 0 0 / 20%);
+        }
+        
+        .small {
+          flex-grow: 1;
+        }
+        
+        .double {
+          flex-grow: 2;
+          border: 3px solid rgb(0 0 0 / 20%);
+        }
+        
+      </template>  
+     
+    </copyto-clipboard> 
+     
+
+  
   </body>
 </html>
