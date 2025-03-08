@@ -15,6 +15,23 @@
      
 </copyto-clipboard>
 ```
+ You can use the ```trim``` attribute to remove leading and trailing whitespace from the copied text
+
+```html
+<copyto-clipboard trim>
+
+      <button>click me 📄</button>
+
+      <template> 
+       
+         
+        Dignissimos reiciendis
+
+
+      </template>  
+     
+</copyto-clipboard>
+```
 
 If you want to insert an HTML tag use "```&lt;```" for the sign < and "```&gt;```" for the sign >
 
