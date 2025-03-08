@@ -1,4 +1,4 @@
-class CopyToClipboard extends HTMLElement {
+export class CopyToClipboard extends HTMLElement {
 
     constructor(){
         super()
@@ -14,6 +14,8 @@ class CopyToClipboard extends HTMLElement {
     }
 
    async handleClick() {
+
+    //console.log(await navigator.clipboard.readText());
         const template=this?.querySelector('template')
 
         if(template===null) {
@@ -25,9 +27,7 @@ class CopyToClipboard extends HTMLElement {
 
         //Get template textContent
         const templateContent=template?.content.textContent
-         
-        //console.log(template.innerHTML);
-      
+               
         if(templateContent) {  
 
             //trim content if trim attribute is set
@@ -55,7 +55,7 @@ class CopyToClipboard extends HTMLElement {
      * Dispatch event copytoclipboard:copy if copy is successful
      */
     dispatchCopyEvent() {
-
+       
         const event=new CustomEvent('copytoclipboard:copy',{cancelable:true})
 
         this.dispatchEvent(event)
@@ -64,12 +64,12 @@ class CopyToClipboard extends HTMLElement {
 }
 
 
-customElements.define('copyto-clipboard',CopyToClipboard)
+//customElements.define('copyto-clipboard',CopyToClipboard)
 
-const cc=Array.from(document.querySelectorAll('copyto-clipboard'))
+/* const cc=Array.from(document.querySelectorAll('copyto-clipboard'))
 
 for (const element of cc) {
     element.addEventListener('copytoclipboard:copy',(e)=> {
-        //alert('COPIED')
+      
     })
-}
+} */

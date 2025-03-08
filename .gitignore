@@ -33,3 +33,5 @@ helper.txt
 /playwright/.cache/
 
 index.html
+
+tests/vitestessai.test.ts
