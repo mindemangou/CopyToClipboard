@@ -64,12 +64,4 @@ export class CopyToClipboard extends HTMLElement {
 }
 
 
-//customElements.define('copyto-clipboard',CopyToClipboard)
-
-/* const cc=Array.from(document.querySelectorAll('copyto-clipboard'))
-
-for (const element of cc) {
-    element.addEventListener('copytoclipboard:copy',(e)=> {
-      
-    })
-} */
+customElements.define('copyto-clipboard',CopyToClipboard)

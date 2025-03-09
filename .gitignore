@@ -26,11 +26,6 @@ dist-ssr
 helper.txt
 .gitconfig
 
-# Playwright
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
 
 index.html
 
