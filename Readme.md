@@ -1,7 +1,22 @@
 ## COPYTO-CLIPBOARD
 
-### Simple custum elements that allows you to copy text
+### A simple web component that allows you to copy text easily
 
+### 📦 Installation
+
+You can install **copyto-clipboard** using npm, yarn, or pnpm:
+
+```sh
+# Using npm
+npm install @mindemangou/copyto-clipboard
+
+# Using yarn
+yarn add @mindemangou/copyto-clipboard
+
+# Using pnpm
+pnpm add @mindemangou/copyto-clipboard
+```
+Example of use:
 ```html
 <copyto-clipboard>
 
@@ -105,3 +120,5 @@ You can also listen to the javascript ```copytoclipboard:copy``` event to detect
           alert('COPIED')
       })
 ```
+
+💡 Feel free to contribute! If you have any ideas or issues, open an issue or submit a PR. 🚀
