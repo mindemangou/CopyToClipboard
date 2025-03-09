@@ -16,6 +16,11 @@ yarn add @mindemangou/copyto-clipboard
 # Using pnpm
 pnpm add @mindemangou/copyto-clipboard
 ```
+###  Import the package
+```js
+import '@mindemangou/copyto-clipboard'
+```
+
 Example of use:
 ```html
 <copyto-clipboard>
@@ -121,4 +126,21 @@ You can also listen to the javascript ```copytoclipboard:copy``` event to detect
       })
 ```
 
+###  Development
+Clone the repo and install dependencies:
+```sh
+	git clone https://github.com/mindemangou/CopyToClipboard.git
+	cd CopyToClipboard
+	pnpm install
+```
+Run in development mode:
+```sh
+	pnpm run dev
+```
+Run tests:
+```sh
+	pnpm run test
+```
 💡 Feel free to contribute! If you have any ideas or issues, open an issue or submit a PR. 🚀
+
+
