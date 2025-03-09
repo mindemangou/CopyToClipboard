@@ -1,8 +1,0 @@
-
-copyto-clipboard #copied,copyto-clipboard[data-copy] #copyToClipboard  {
-  display: none;
-}
-
-copyto-clipboard[data-copy] #copied {
-  display: block;
-}
