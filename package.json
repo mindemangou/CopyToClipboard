@@ -1,6 +1,6 @@
 {
-  "name": "copytoclipboard",
-  "private": true,
+  "name": "@mindemangou/copy-to-clipboard",
+  "private": false,
   "version": "1.0.0",
   "type": "module",
   "files": ["dist"],
