@@ -6,23 +6,35 @@ export class CopyToClipboard extends HTMLElement {
     }
 
     connectedCallback() {
-        this.addEventListener('click',this.handleClick)
+
+        if(!this.hasAttribute('disabled')) {
+            this.addEventListener('click',this.handleClick)
+        }
     }
 
     disconnectedCallback() {
+        
         this.removeEventListener('click',this.handleClick)
+    }
+
+
+    getTemplate():HTMLTemplateElement|Element|null {
+
+        const template:HTMLTemplateElement|null|string=this?.querySelector('template')
+
+        const targetSelector=this.getAttribute('target')
+        const target=targetSelector?document.querySelector(targetSelector):null
+        
+        return template||target
     }
 
    async handleClick() {
 
-    //console.log(await navigator.clipboard.readText());
-        const template=this?.querySelector('template')
+        const template=this.getTemplate()
 
         if(template===null) {
-
-            console.warn('The template tag is not found')
-
-            return false;
+            console.warn('The template tag or attribut target are not found')
+            return false
         }
 
         //Get template textContent

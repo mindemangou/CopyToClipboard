@@ -1,14 +1,14 @@
 {
   "name": "@mindemangou/copyto-clipboard",
   "private": false,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "files": ["dist"],
   "main":"./dist/copyToClipboard.umd.js",
   "module":"./dist/copyToClipboard.es.js",
   "homepage":"https://github.com/mindemangou/CopyToClipboard",
   "authors":["Mindemangou FADONOUGBO"],
-  "licence":"MIT",
+  "Licence":"MIT",
   "keywords": [
     "web-components",
     "web-component",

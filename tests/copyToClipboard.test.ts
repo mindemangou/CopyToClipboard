@@ -12,7 +12,7 @@ describe('Copy to clipboard',{skip:false},()=> {
     
       browser = new Browser();
       page = browser.newPage();
-
+      
       const myCustomElements=page.mainFrame.window.customElements
       
       myCustomElements.define('copyto-clipboard',CopyToClipboard)
@@ -40,7 +40,7 @@ describe('Copy to clipboard',{skip:false},()=> {
 
     await browser.close()
     expect(consoleWarnMock).toHaveBeenCalled()
-    expect(consoleWarnMock).toHaveBeenCalledWith('The template tag is not found')
+    expect(consoleWarnMock).toHaveBeenCalledWith('The template tag or attribut target are not found')
 
   })
 
@@ -167,6 +167,67 @@ describe('Copy to clipboard',{skip:false},()=> {
     
     await browser.close()
     expect(dispatchEventMock.mock.calls[3][0].type).toBe('copytoclipboard:copy')
+  })
+
+  test(" target attribut test",async ()=> {
+
+    vi.stubGlobal('document',page.mainFrame.window.document)
+
+    page.content=/*html*/`
+        <html>
+            <body>
+
+                <div>
+                  John doe
+                </div>
+                <copyto-clipboard  target='div' trim>
+
+                </copyto-clipboard>
+            </body> 
+        </html>
+    `
+
+    const copyToClipboardComponent=document?.querySelector('copyto-clipboard') as unknown as HTMLElement
+    
+
+    const writeTextMock=vi.spyOn(navigator.clipboard,'writeText')
+
+    copyToClipboardComponent.click()
+
+    await browser.close()
+
+    expect(writeTextMock).toHaveBeenCalled()
+    expect(writeTextMock).toHaveBeenCalledWith('John doe')
+
+  })
+
+  test("  disabled attribut test",async ()=> {
+
+
+    page.content=/*html*/`
+        <html>
+            <body>
+                <copyto-clipboard  disabled>
+                  <template>
+                     <span>John doe</span>
+                  </template>
+                </copyto-clipboard>
+            </body> 
+        </html>
+    `
+
+    const copyToClipboardComponent=document?.querySelector('copyto-clipboard') as unknown as HTMLElement
+    
+
+    const writeTextMock=vi.spyOn(navigator.clipboard,'writeText')
+
+    copyToClipboardComponent.click()
+
+    await browser.close()
+
+    expect(writeTextMock).not.toHaveBeenCalled()
+    expect(copyToClipboardComponent.hasAttribute('data-copy')).toBe(false)
+
   })
 
 })

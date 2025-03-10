@@ -39,6 +39,21 @@ Example of use:
      
 </copyto-clipboard>
 ```
+ Use ```target``` attribute if you want to copy the contents of a DOM element
+
+ ```html
+  <div id='template' >
+    <span>John Doe</span>
+  </div>
+
+  <copyto-clipboard  target='#template'>
+    <button>click me 📄</button>
+  </copyto-clipboard>
+
+  <!-- Output -->
+   <span>John Doe</span>
+ ```
+
  You can use the ```trim``` attribute to remove leading and trailing whitespace from the copied text
 
 ```html
@@ -57,22 +72,17 @@ Example of use:
 </copyto-clipboard>
 ```
 
-<!--If you want to insert an HTML tag use "```&lt;```" for the sign < and "```&gt;```" for the sign >
+Use the ```disable``` attribute to prevent copying
 
 ```html
-<copyto-clipboard>
 
-    <button>click me 📄</button>
+<!-- copy not work -->
+<copyto-clipboard disabled>
+      <button>click me 📄</button>
 
-    <template> 
-        <div>hello</div> // Resultat after pasting the text: hello 
-
-        &lt;div&gt;hello&lt;/div&gt; //Resultat after pasting the text: <div>hello</div> 
-    </template>
-    
-</copyto-clipboard> 
+      <template> </template>  
+</copyto-clipboard>
 ```
--->
 
 A data-copy attribute is set to the custom elements ```copyto-clipboard``` if the copy is successful
 
