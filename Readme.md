@@ -57,7 +57,7 @@ Example of use:
 </copyto-clipboard>
 ```
 
-If you want to insert an HTML tag use "```&lt;```" for the sign < and "```&gt;```" for the sign >
+<!--If you want to insert an HTML tag use "```&lt;```" for the sign < and "```&gt;```" for the sign >
 
 ```html
 <copyto-clipboard>
@@ -65,15 +65,14 @@ If you want to insert an HTML tag use "```&lt;```" for the sign < and "```&gt;``
     <button>click me 📄</button>
 
     <template> 
-        <!-- ❌ -->
         <div>hello</div> // Resultat after pasting the text: hello 
 
-        <!-- ✅ -->
         &lt;div&gt;hello&lt;/div&gt; //Resultat after pasting the text: <div>hello</div> 
     </template>
     
 </copyto-clipboard> 
 ```
+-->
 
 A data-copy attribute is set to the custom elements ```copyto-clipboard``` if the copy is successful
 

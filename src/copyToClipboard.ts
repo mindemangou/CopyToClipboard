@@ -26,7 +26,7 @@ export class CopyToClipboard extends HTMLElement {
         }
 
         //Get template textContent
-        const templateContent=template?.content.textContent
+        const templateContent=template?.innerHTML.toString()
                
         if(templateContent) {  
 
