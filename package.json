@@ -8,6 +8,7 @@
   "module":"./dist/copyToClipboard.es.js",
   "homepage":"https://github.com/mindemangou/CopyToClipboard",
   "authors":["Mindemangou FADONOUGBO"],
+  "licence":"MIT",
   "keywords": [
     "web-components",
     "web-component",

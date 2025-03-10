@@ -20,6 +20,10 @@ pnpm add @mindemangou/copyto-clipboard
 ```js
 import '@mindemangou/copyto-clipboard'
 ```
+OR
+```html
+<script type="module" src="./node_modules/@mindemangou/copyto-clipboard" defer></script>
+```
 
 Example of use:
 ```html
