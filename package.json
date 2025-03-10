@@ -1,14 +1,15 @@
 {
   "name": "@mindemangou/copyto-clipboard",
   "private": false,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
+  "description":"A simple web component that allows you to copy text easily",
   "files": ["dist"],
   "main":"./dist/copyToClipboard.umd.js",
   "module":"./dist/copyToClipboard.es.js",
   "homepage":"https://github.com/mindemangou/CopyToClipboard",
-  "authors":["Mindemangou FADONOUGBO"],
-  "Licence":"MIT",
+  "author":"Mindemangou FADONOUGBO <mindemangou@gmail.com>",
+  "license":"MIT",
   "keywords": [
     "web-components",
     "web-component",
