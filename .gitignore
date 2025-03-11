@@ -31,3 +31,5 @@ index.html
 tests/vitestessai.test.ts
 
 src/index.css
+
+src/vite-env.d.ts
