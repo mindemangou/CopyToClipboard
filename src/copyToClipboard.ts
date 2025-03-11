@@ -36,6 +36,7 @@ export class CopyToClipboard extends HTMLElement {
    async handleClick() {
 
         const template=this.getTemplate()
+        
 
         if(template===null) {
             console.warn('The template tag or attribut target are not found')

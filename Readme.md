@@ -39,7 +39,26 @@ Example of use:
      
 </copyto-clipboard>
 ```
- Use ```target``` attribute if you want to copy the contents of a DOM element
+
+If you want to insert an HTML tag use "```&lt;```" for the sign < and "```&gt;```" for the sign >
+
+```html
+<copyto-clipboard>
+
+    <button>click me 📄</button>
+
+    <template> 
+        <!-- ❌ -->
+        <div>hello</div> // Resultat after pasting the text: hello 
+
+        <!-- ✅ -->
+        &lt;div&gt;hello&lt;/div&gt; //Resultat after pasting the text: <div>hello</div> 
+    </template>
+    
+</copyto-clipboard> 
+```
+
+Use ```target``` attribute if you want to copy the contents of a DOM element
 
  ```html
   <div id='template' >
@@ -51,7 +70,7 @@ Example of use:
   </copyto-clipboard>
 
   <!-- Output -->
-   <span>John Doe</span>
+   John Doe
  ```
 
  You can use the ```trim``` attribute to remove leading and trailing whitespace from the copied text
