@@ -18,14 +18,19 @@ export class CopyToClipboard extends HTMLElement {
     }
 
 
-    getTemplate():HTMLTemplateElement|Element|null {
+   private getTemplate():HTMLTemplateElement|Element|null {
 
-        const template:HTMLTemplateElement|null|string=this?.querySelector('template')
+        const template:HTMLTemplateElement|null=this?.querySelector('template')
 
         const targetSelector=this.getAttribute('target')
         const target=targetSelector?document.querySelector(targetSelector):null
         
         return template||target
+    }
+
+    private isTemplateElement(template:Element|HTMLTemplateElement):template is HTMLTemplateElement {
+
+       return template.content?true:false
     }
 
    async handleClick() {
@@ -38,8 +43,8 @@ export class CopyToClipboard extends HTMLElement {
         }
 
         //Get template textContent
-        const templateContent=template?.innerHTML.toString()
-               
+        const templateContent=this.isTemplateElement(template)?template?.content.textContent:template.textContent;
+
         if(templateContent) {  
 
             //trim content if trim attribute is set

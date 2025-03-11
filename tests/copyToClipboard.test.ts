@@ -117,7 +117,7 @@ describe('Copy to clipboard',{skip:false},()=> {
 
     await browser.close()
     const clipboardContent=await navigator.clipboard.readText()
-    expect(clipboardContent).toBe('<span>name: John doe</span> <strong>age:20</strong>')
+    expect(clipboardContent).toBe('name: John doe age:20')
   })
 
   test(" Test the use of &lt; et &gt;",async ()=> {
@@ -140,7 +140,7 @@ describe('Copy to clipboard',{skip:false},()=> {
 
     await browser.close()
     const clipboardContent=await navigator.clipboard.readText()
-    expect(clipboardContent).toBe('&lt;span&gt;name: John doe&lt;/span&gt; &lt;strong&gt;age:20&lt;/strong&gt;')
+    expect(clipboardContent).toBe('<span>name: John doe</span> <strong>age:20</strong>')
   })
 
 
