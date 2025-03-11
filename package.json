@@ -1,7 +1,7 @@
 {
   "name": "@mindemangou/copyto-clipboard",
   "private": false,
-  "version": "2.0.0",
+  "version": "2.0.1",
   "type": "module",
   "description":"A simple web component that allows you to copy text easily",
   "files": ["dist"],
