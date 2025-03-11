@@ -1,21 +1,28 @@
-class n extends HTMLElement {
+class s extends HTMLElement {
   constructor() {
     super(), this.handleClick = this.handleClick.bind(this);
   }
   connectedCallback() {
-    this.addEventListener("click", this.handleClick);
+    this.hasAttribute("disabled") || this.addEventListener("click", this.handleClick);
   }
   disconnectedCallback() {
     this.removeEventListener("click", this.handleClick);
   }
+  getTemplate() {
+    const t = this == null ? void 0 : this.querySelector("template"), e = this.getAttribute("target"), n = e ? document.querySelector(e) : null;
+    return t || n;
+  }
+  isTemplateElement(t) {
+    return "content" in t;
+  }
   async handleClick() {
-    const t = this == null ? void 0 : this.querySelector("template");
+    const t = this.getTemplate();
     if (t === null)
-      return console.warn("The template tag is not found"), !1;
-    const e = t == null ? void 0 : t.content.textContent;
+      return console.warn("The template tag or attribut target are not found"), !1;
+    const e = this.isTemplateElement(t) ? t == null ? void 0 : t.content.textContent : t.textContent;
     if (e) {
-      const c = this.hasAttribute("trim") ? e == null ? void 0 : e.trim() : e;
-      navigator.clipboard.writeText(c).then(() => {
+      const n = this.hasAttribute("trim") ? e == null ? void 0 : e.trim() : e;
+      navigator.clipboard.writeText(n).then(() => {
         this.setAttribute("data-copy", ""), this.dispatchCopyEvent();
       }).catch((i) => {
         this.hasAttribute("data-copy") && this.removeAttribute("data-copy"), console.error(i.message);
@@ -30,7 +37,7 @@ class n extends HTMLElement {
     this.dispatchEvent(t);
   }
 }
-customElements.define("copyto-clipboard", n);
+customElements.define("copyto-clipboard", s);
 export {
-  n as CopyToClipboard
+  s as CopyToClipboard
 };

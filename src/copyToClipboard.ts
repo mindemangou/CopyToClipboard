@@ -29,14 +29,13 @@ export class CopyToClipboard extends HTMLElement {
     }
 
     private isTemplateElement(template:Element|HTMLTemplateElement):template is HTMLTemplateElement {
-
-       return template.content?true:false
+       return "content" in template?true:false
     }
 
    async handleClick() {
 
         const template=this.getTemplate()
-        
+
 
         if(template===null) {
             console.warn('The template tag or attribut target are not found')
